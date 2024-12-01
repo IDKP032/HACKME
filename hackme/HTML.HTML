@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HACK ME</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://cdn.discordapp.com/attachments/1312008160248201216/1312008468118372374/Picsart_24-11-27_16-27-42-744_7680x4320_prob-3_00000.png?ex=674c401a&is=674aee9a&hm=d489b6a97584e932b5f577b8ba7d8d33450e7131d34f8a2d4d1a771e141ca08a');
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
+            position: relative; /* Set position relative for absolute positioning of the box */
+        }
+
+        .animated-box {
+            width: 300px; /* Width of the box */
+            height: 180px; /* Height of the box */
+            background: linear-gradient(135deg, #8B0000, #A52A2A); /* Dark red gradient background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 20px; /* More rounded corners */
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+            text-decoration: none;
+            position: absolute; /* Position the box absolutely */
+            bottom: 30px; /* Position it 30px from the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, 0); /* Adjust for centering */
+            animation: pulse 2s infinite; /* Pulsing effect */
+        }
+
+        .animated-box:hover {
+            transform: scale(1.1) translate(-50%, 0); /* Scale up on hover */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(139, 0, 0, 0.8); /* Glowing effect */
+        }
+
+        .animated-box a {
+            color: white;
+            text-decoration: none;
+            font-size: 22px; /* Slightly larger font size */
+            font-weight: bold; /* Bold text */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(-50%, 0);
+            }
+            50% {
+                transform: scale(1.02) translate(-50%, 0);
+            }
+            100% {
+                transform: scale(1) translate(-50%, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="animated-box" id="discordBox">
+        <a href="https://discord.com/billing/promotions/dEyHSB8Urme5mQ8UqRYsACDq" id="discordLink">NITRO LINK</a>
+    </div>
+
+    <script>
+        const discordLink = document.getElementById('discordLink'); // Get the link element
+        const linkUsed = localStorage.getItem('linkUsed'); // Check if the link has been used
+        let clickCount = parseInt(localStorage.getItem('clickCount')) || 0; // Get click count
+
+        // Add click event listener
+        discordLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action
+            clickCount++; // Increment click count
+            localStorage.setItem('clickCount', clickCount); // Store updated click count
+
+            if (clickCount === 1) {
+                // Open the link in a new tab on the first click
+                window.open(discordLink.href, '_blank');
+            } else if (clickCount >  1) {
+                // Show alert message on the second click
+                alert("L3ID GHI MRA FL3AM A WLD L97BA");
+                discordLink.style.pointerEvents = 'none'; // Disable further clicks
+                discordLink.style.color = 'gray'; // Change color to indicate it's disabled
+            }
+        });
+
+        // Get the box element
+        const box = document.getElementById('discordBox');
+
+        // Optional: Add more animations or effects using JavaScript
+        box.addEventListener('mouseover', () => {
+            box.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+            box.style.transform = 'scale(1.1) translate(-50%, 0)';
+        });
+
+        box.addEventListener('mouseout', () => {
+            box.style.transform = 'scale(1) translate(-50%, 0)';
+        });
+    </script>
+
+</body>
+</html>
